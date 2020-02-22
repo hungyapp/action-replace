@@ -1,0 +1,25 @@
+name: 'Regex Replace'
+author: 'Thiago Bernardes'
+description: 'Replace String using Regex'
+inputs:
+  pattern:
+    description: 'Regular expression pattern'
+    required: true
+  string:
+    description: 'String value'
+    required: true
+  replace:
+    description: 'Replace string'
+    required: true
+  flags:
+    description: 'Regex Flags'
+    required: false
+outputs:
+  replaced:
+    description: 'The output string'
+runs:
+  using: 'node12'
+  main: 'index.js'
+branding:
+  icon: 'search'
+  color: gray-dark
