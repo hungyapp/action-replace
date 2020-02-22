@@ -16,6 +16,8 @@ jobs:
           replace: '$1'
       - name: Check equality
         run: '[[ "${{ steps.test.outputs.result }}" == "1.0.1" ]]'
+      - name: Branch
+        run echo $GITHUB_REF
       - name: Test 2
         uses: ./
         id: test2
