@@ -22,6 +22,6 @@ jobs:
         with:
           string: 'myrepo/head/master'
           pattern: 'myrepo\/head\/'
-          replace: '$1'
+          replace: ''
       - name: Check equality
         run: '[[ "${{ steps.test2.outputs.replaced }}" == "master" ]]'
