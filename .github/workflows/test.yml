@@ -15,7 +15,7 @@ jobs:
           pattern: '[\w\d/]*v(\d+(?:\.\d+)*)'
           replace: '$1'
       - name: Check equality
-        run: '[[ "${{ steps.test.outputs.replaced }}" == "1.0.1" ]]'
+        run: '[[ "${{ steps.test.outputs.result }}" == "1.0.1" ]]'
       - name: Test 2
         uses: ./
         id: test2
@@ -24,4 +24,4 @@ jobs:
           pattern: 'myrepo\/head\/'
           replace: ''
       - name: Check equality
-        run: '[[ "${{ steps.test2.outputs.replaced }}" == "master" ]]'
+        run: '[[ "${{ steps.test2.outputs.result }}" == "master" ]]'
