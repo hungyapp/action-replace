@@ -22,7 +22,7 @@ jobs:
         uses: ./
         id: test2
         with:
-          string: $GITHUB_REF
+          string: ${{GITHUB_REF}}
           pattern: 'refs\/head\/'
           replace: ''
       - name: Check equality 2
