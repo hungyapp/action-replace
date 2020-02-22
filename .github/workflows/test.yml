@@ -20,8 +20,8 @@ jobs:
         uses: ./
         id: test2
         with:
-          string: 'myrepo/head/master'
-          pattern: 'myrepo\/head\/'
+          string: '$GITHUB_REF'
+          pattern: 'refs\/head\/'
           replace: ''
       - name: Check equality
         run: '[[ "${{ steps.test2.outputs.result }}" == "master" ]]'
