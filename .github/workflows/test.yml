@@ -13,6 +13,6 @@ jobs:
         with:
           string: 'aasdfa/v1.0.1'
           pattern: '[\w\d/]*v(\d+(?:\.\d+)*)'
-          replace-with: '$1'
+          replace: '$1'
       - name: Check equality
         run: '[[ "${{ steps.test.outputs.replaced }}" == "1.0.1" ]]'
