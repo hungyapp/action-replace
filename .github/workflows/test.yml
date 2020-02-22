@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Test
+      - name: Test 1
         uses: ./
         id: test
         with:
@@ -16,3 +16,12 @@ jobs:
           replace: '$1'
       - name: Check equality
         run: '[[ "${{ steps.test.outputs.replaced }}" == "1.0.1" ]]'
+      - name: Test 2
+        uses: ./
+        id: test2
+        with:
+          string: 'myrepo/head/master'
+          pattern: 'myrepo\/head\/'
+          replace: '$1'
+      - name: Check equality
+        run: '[[ "${{ steps.test2.outputs.replaced }}" == "master" ]]'
