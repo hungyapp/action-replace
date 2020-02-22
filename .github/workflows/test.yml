@@ -14,7 +14,7 @@ jobs:
           string: 'aasdfa/v1.0.1'
           pattern: '[\w\d/]*v(\d+(?:\.\d+)*)'
           replace: '$1'
-      - name: Check equality
+      - name: Check equality 1
         run: '[[ "${{ steps.test.outputs.result }}" == "1.0.1" ]]'
       - name: Branch
         run: echo $GITHUB_REF
@@ -25,7 +25,5 @@ jobs:
           string: $GITHUB_REF
           pattern: 'refs\/head\/'
           replace: ''
-      - name: Check equality
-        run: |
-          echo ${{ steps.test2.outputs.value }}
-          '[[ "${{ steps.test2.outputs.result }}" == "master" ]]'
+      - name: Check equality 2
+        run: '[[ "${{ steps.test2.outputs.result }}" == "master" ]]'
