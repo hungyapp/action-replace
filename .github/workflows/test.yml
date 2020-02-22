@@ -17,7 +17,7 @@ jobs:
       - name: Check equality
         run: '[[ "${{ steps.test.outputs.result }}" == "1.0.1" ]]'
       - name: Branch
-        run echo $GITHUB_REF
+        run: echo $GITHUB_REF
       - name: Test 2
         uses: ./
         id: test2
@@ -26,4 +26,6 @@ jobs:
           pattern: 'refs\/head\/'
           replace: ''
       - name: Check equality
-        run: '[[ "${{ steps.test2.outputs.result }}" == "master" ]]'
+        run: |
+          echo ${{ steps.test2.outputs.value }}
+          '[[ "${{ steps.test2.outputs.result }}" == "master" ]]'
